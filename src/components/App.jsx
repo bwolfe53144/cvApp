@@ -203,7 +203,7 @@ const toggleEducationFormVisibility = () => {
   return (
     <div className='mainContainer'>
         <div className='infoContainer'>
-            <div className='skillContainer'>
+            <div className='formContainer'>
                 <div className='skillHeader'>
                     <h1>General Information</h1>
                     <button className = 'genButton' onClick={toggleGeneralFormVisibility}>
@@ -221,36 +221,24 @@ const toggleEducationFormVisibility = () => {
             </div>
             <div className='skillContainer'>
                 <div className='skillHeader'>
-                    <h1>Education</h1>
-                    <button className = 'eduButton' onClick={toggleEducationVisibility}>
-                        {isEducationVisible ? '▲' : '▼'}
+                    <h1>Skills</h1>
+                    <button className = 'eduButton' onClick={toggleSkillFormVisibility}>
+                        {isSkillFormVisible ? '▲' : '▼'}
                     </button>
                 </div> 
-                {isEducationVisible && (
+                {isSkillFormVisible && (
                 <div className='skillBody'>
-                    {isEducationFormVisible && (
-                        <AddEducation 
-                        onAddEducation={handleAddEducation}
-                        hideEducationForm={hideEducationForm}
-                     />
-                    )}
-                    {isEducationButtonVisible && (
-                        <button className = 'addButton' onClick={toggleEducationFormVisibility}>
-                            {isEducationFormVisible ? 'Cancel' : 'Add School'}
-                        </button>
-                    )}
-                    <EducationList
-                    educations={educations}
-                    hideEducationForm={hideEducationForm}
-                    isEducationActive={isEducationActive}
-                    changeEducationActive={changeEducationActive}
-                    onChangeEducation={handleChangeEducation}
-                    onDeleteEducation={handleDeleteEducation}
+                    <AddSkill 
+                    onAddSkill={handleAddSkill} />
+                    <SkillList
+                    skills={skills}
+                    onChangeSkill={handleChangeSkill}
+                    onDeleteSkill={handleDeleteSkill}
                     />
                 </div>
             )}
             </div>
-            <div className='skillContainer'>
+            <div className='formContainer'>
                 <div className='skillHeader'>
                     <h1>Job Experience</h1>
                     <button className = 'genButton' onClick={toggleJobVisibility}>
@@ -281,21 +269,33 @@ const toggleEducationFormVisibility = () => {
                 </div>
             )}
             </div>
-            <div className='skillContainer'>
+            <div className='formContainer'>
                 <div className='skillHeader'>
-                    <h1>Skills</h1>
-                    <button className = 'eduButton' onClick={toggleSkillFormVisibility}>
-                        {isSkillFormVisible ? '▲' : '▼'}
+                    <h1>Education</h1>
+                    <button className = 'eduButton' onClick={toggleEducationVisibility}>
+                        {isEducationVisible ? '▲' : '▼'}
                     </button>
                 </div> 
-                {isSkillFormVisible && (
+                {isEducationVisible && (
                 <div className='skillBody'>
-                    <AddSkill 
-                    onAddSkill={handleAddSkill} />
-                    <SkillList
-                    skills={skills}
-                    onChangeSkill={handleChangeSkill}
-                    onDeleteSkill={handleDeleteSkill}
+                    {isEducationFormVisible && (
+                        <AddEducation 
+                        onAddEducation={handleAddEducation}
+                        hideEducationForm={hideEducationForm}
+                     />
+                    )}
+                    {isEducationButtonVisible && (
+                        <button className = 'addButton' onClick={toggleEducationFormVisibility}>
+                            {isEducationFormVisible ? 'Cancel' : 'Add School'}
+                        </button>
+                    )}
+                    <EducationList
+                    educations={educations}
+                    hideEducationForm={hideEducationForm}
+                    isEducationActive={isEducationActive}
+                    changeEducationActive={changeEducationActive}
+                    onChangeEducation={handleChangeEducation}
+                    onDeleteEducation={handleDeleteEducation}
                     />
                 </div>
             )}

@@ -36,10 +36,6 @@ ul {
   top: 1rem;
 }
 
-.eduButton {
-  position: relative;
-  bottom: .5rem;
-}
 
 *:focus {
   outline: 0 !important;
@@ -111,6 +107,7 @@ input:hover {
   color: #888;
 }
 
+.formContainer, 
 .skillContainer {
   display: flex;
   flex-direction: column;
@@ -118,6 +115,10 @@ input:hover {
   font-weight: bold;
   justify-content: center;
   align-items: center;
+}
+
+.skillContainer {
+  margin-bottom: -2rem;
 }
 
 .skillHeader {
