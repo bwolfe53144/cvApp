@@ -1,0 +1,177 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 1rem, 0; 
+  }
+
+.educationList {
+  display: none;
+}
+
+.genButton, 
+.eduButton {
+  border: none;
+  background-color: white;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.genButton {
+  position: relative;
+  top: 1rem;
+}
+
+.eduButton {
+  position: relative;
+  bottom: .5rem;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding-top: 1rem;
+  gap: 2rem;
+}
+
+.addButton {
+  max-height: 8rem;
+  color:white;
+  background-color: rgb(18, 13, 88);
+  max-width: 30%;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.addButton:hover {
+  background-color: rgb(73, 66, 177);
+}
+
+
+.generalForm {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+input {
+  margin: 20px 0;
+  width: 100%;
+  padding: 10px;
+}
+
+input[type="submit"] {
+  background-color: blue;
+  width: 11.25rem;
+  display: block;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(15, 15, 100);
+}
+
+input:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.eachSkill {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.deleteButton {
+  max-height: 3rem;
+  padding: 6px 10px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background: #c00;
+}
+
+.editButton {
+  padding: 6px 10px;
+  max-height: 3rem;
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background: rgb(15, 15, 100);
+  color: white;
+}

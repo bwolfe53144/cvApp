@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.myName {
+    font-size: 2rem;
+}
+
+.resume {
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+.genInfo,
+.resumeSection,
+.jobSection {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.resumeTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+
+.genInfo {
+    font-weight: bold;
+}
+
+ul.mySkills {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.jobName,
+.schoolName {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.jobInfo, 
+.jobName,
+.schoolInfo,
+.schoolName {
+    display: flex;
+    justify-content: left;
+    gap: .5rem;
+}
+
+.jobSkills {
+    display: flex;
+    justify-content: center;
+}
+
+.resumeJob {
+    margin-bottom: 1rem;
+}
+
+
+
+
