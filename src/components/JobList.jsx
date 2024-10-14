@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { format } from 'date-fns';
 import './App.css'
 
 export default function JobList({jobs, onChangeJob, onDeleteJob, hideJobForm, isJobActive, changeJobActive}) {
@@ -62,7 +63,6 @@ function startEdit() {
         />
         <label>Start Date</label>
         <input
-          type='date'
           value={job.startDate}
           onChange={(e) => {
             onChange({
@@ -73,7 +73,6 @@ function startEdit() {
         />
         <label>End Date</label>
         <input
-          type='date'
           value={job.endDate}
           onChange={(e) => {
             onChange({

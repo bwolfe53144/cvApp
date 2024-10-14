@@ -62,7 +62,6 @@ function startEdit() {
         />
         <label>Start Date</label>
         <input
-          type='date'
           value={education.startDate}
           onChange={(e) => {
             onChange({
@@ -73,7 +72,6 @@ function startEdit() {
         />
         <label>End Date</label>
         <input
-          type='date'
           value={education.endDate}
           onChange={(e) => {
             onChange({

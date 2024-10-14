@@ -62,6 +62,10 @@ ul.mySkills {
     margin-bottom: 1rem;
 }
 
-
+@media (max-width: 600px) {
+    .jobInfo {
+        text-align: left;
+    }
+  }
 
 

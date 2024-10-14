@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { format } from 'date-fns';
 import AddSkill from './AddSkill.jsx';
 import SkillList from './SkillList.jsx';
 import AddEducation from './AddEducation.jsx';
@@ -18,6 +19,8 @@ export default function App() {
         email: 'bhepworth@gmail.com',
         id: 1
       });
+
+
 
   const [isGeneralFormVisible, setIsGeneralFormVisible] = useState(false);
 
@@ -104,14 +107,14 @@ const toggleEducationFormVisibility = () => {
 
  /*Handle button clicks for education*/
    function handleAddEducation(mySchool) {
-    {mySchool.endDate === '' ? mySchool.endDate = 'current' : null}
+    {mySchool.endDate === '' ? mySchool.endDate = 'current' : mySchool.endDate = format(mySchool.endDate, 'MM-yyyy')}
      setEducations([
        ...educations,
        {
          id: nextEducationId++,
          school: mySchool.school,
          degree: mySchool.degree,
-         startDate: mySchool.startDate,
+         startDate: format(mySchool.startDate, 'MM-yyyy'),
          endDate: mySchool.endDate
        },
      ]);
@@ -168,14 +171,14 @@ const toggleEducationFormVisibility = () => {
    
     /*Handle button clicks for education*/
       function handleAddJob(myJob) {
-       {myJob.endDate === '' ? myJob.endDate = 'current' : null}
+       {myJob.endDate === '' ? myJob.endDate = 'current' : myJob.endDate = format(myJob.endDate, 'MM-yyyy')}
         setJobs([
           ...jobs,
           {
             id: nextJobId++,
             employer: myJob.employer,
             title: myJob.title,
-            startDate: myJob.startDate,
+            startDate: format(myJob.startDate, 'MM-yyyy'),
             endDate: myJob.endDate,
             responsibility: myJob.responsibility,
             responsibilityTwo: myJob.responsibilityTwo,
@@ -323,14 +326,14 @@ const initialSkills = [
 
 let nextEducationId = 2;
 const initialEducations = [
-  {id: 0, school: 'UW Whitewater', degree: 'Bachelors of Mathematics', startDate: '2000-09-04', endDate: '2004-04-15'},
-  {id: 1, school: 'UW Madison', degree: 'Master of Science in CS', startDate: '2004-09-07', endDate: '2007-04-17'}
+  {id: 0, school: 'UW Whitewater', degree: 'Bachelors of Mathematics', startDate: '09-2000', endDate: '04-2004'},
+  {id: 1, school: 'UW Madison', degree: 'Master of Science in CS', startDate: '09-2004', endDate: '04-2007'}
 ];
 
 let nextJobId = 3;
 const initialJobs = [
-    {employer: 'Google', title: 'Lead Web Developer', startDate: '2000-04-14', endDate: '2010-04-14', responsibility: 'Lead developer that helped implement websites.', responsibilityTwo: 'Taught the CS department react to make more streamlined websites', responsibilityThree: 'Helped code some AI programs to help with efficiency', id: 1 }, 
-    {employer: 'Microsoft', title: 'Senior developer', startDate: '2010-04-15', endDate: '2020-04-14', responsibility: "Collaborated on Microsoft's website.", responsibilityTwo: 'Part of the team that maintained Microsoft office', responsibilityThree: 'Worked on the database using SQL' , id: 2 }, 
-    {employer: 'McDonalds', title: 'Cashier', startDate: '2020-04-15', endDate: '2024-09-15', responsibility: 'Worked the cash register', responsibilityTwo: 'Cleaned the bathrooms is another responsibility I had', responsibilityThree: 'Helped train other associates so that they could actually get the order right', id: 3 }, 
+    {employer: 'Google', title: 'Lead Web Developer', startDate: '04-2000', endDate: '04-2010', responsibility: 'Lead developer that helped implement websites.', responsibilityTwo: 'Taught the CS department react to make more streamlined websites', responsibilityThree: 'Helped code some AI programs to help with efficiency', id: 1 }, 
+    {employer: 'Microsoft', title: 'Senior developer', startDate: '04-2010', endDate: '04-2020', responsibility: "Collaborated on Microsoft's website.", responsibilityTwo: 'Part of the team that maintained Microsoft office', responsibilityThree: 'Worked on the database using SQL' , id: 2 }, 
+    {employer: 'McDonalds', title: 'Cashier', startDate: '04-2020', endDate: '04-2024', responsibility: 'Worked the cash register', responsibilityTwo: 'Cleaned the bathrooms is another responsibility I had', responsibilityThree: 'Helped train other associates so that they could actually get the order right', id: 3 }, 
   ]
 
